@@ -44,6 +44,7 @@
     function Game() {
       const [game, setGame] = React.useState(initialGameState);
       const [selectedSquare, setSelectedSquare] = React.useState(null);
+
       const [step, setStep] = React.useState(0);
 
       // Handle square click for moving pieces
@@ -69,17 +70,17 @@
 
       return (
         <div>
-          <Board game={game} onSquareClick={handleClick} selectedSquare={selectedSquare} />
+          <Board game={game} onSquareClick={handleClick} selectedSquare={selectedSquare} step1={step} />
         </div>
       );
     }
 
     // View: Board and buttons reflecting the game state
-    function Board({ game, onSquareClick, selectedSquare }) {
+    function Board({ game, onSquareClick, selectedSquare, step }) {
       return (
         <div>
 
-          <button> {step} </button>
+          <button> {stepl} </button>
 
           {game.map((row, rowIndex) => (
             <div key={rowIndex} style={{ display: 'flex' }}>
